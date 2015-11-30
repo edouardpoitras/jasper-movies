@@ -1,6 +1,7 @@
 # -*- coding: utf-8-*-
 import re
 from client import plugin
+from client import app_utils
 from imdb import IMDb
 
 def format_names(people):
@@ -9,9 +10,6 @@ def format_names(people):
     for person in people:
         ret += '%s.  ' %person.get('name')
     return ret.strip('. ')
-
-def yes(text):
-    return bool(re.search(r'\b(yes)\b', text, re.IGNORECASE))
 
 class MoviesPlugin(plugin.SpeechHandlerPlugin):
     def get_phrases(self):
@@ -36,7 +34,7 @@ class MoviesPlugin(plugin.SpeechHandlerPlugin):
         for movie in movie_query:
             mic.say('Did you mean %s (%s)?' %(movie.get('title'), movie.get('year')))
             response = mic.active_listen()
-            if yes(response):
+            if app_utils.is_positive(response):
                 ia.update(movie)
                 movie_info = '%s (%s).  ' %(movie.get('title'), movie.get('year'))
                 if movie.get('rating'): movie_info += 'Rating.  %s out of 10.  ' %movie.get('rating')

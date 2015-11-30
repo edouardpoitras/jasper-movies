@@ -1,7 +1,7 @@
 jasper-movies
 =============
 
-Jasper Movies Module
+Jasper Movies Plugin
 
 ## Installation Steps
 
@@ -9,7 +9,7 @@ Jasper Movies Module
 ```
 sudo pip install imdbpy
 ```
-2. Place the Movies.py file in your jasper_directory/client/modules/ folder
+2. Place the movies/ folder in your jasper_directory/plugins/speechhandler/ folder
 3. Restart Jasper
 
 ## Usage

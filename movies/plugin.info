@@ -1,0 +1,10 @@
+[Plugin]
+Name = status
+Version = 2.0.0
+license = MIT
+URL = https://github.com/edouardpoitras/jasper-movies
+Description = Retrieves movie information from IMDB
+
+[Author]
+Name = Edouard Poitras
+URL = https://github.com/edouardpoitras

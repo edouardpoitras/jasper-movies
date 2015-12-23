@@ -7,7 +7,7 @@ Jasper Movies Module
 
 1. Install dependencies
 ```
-sudo pip install imdbpy
+sudo pip install "imdbpy>=5.0"
 ```
 2. Place the Movies.py file in your jasper_directory/client/modules/ folder
 3. Restart Jasper

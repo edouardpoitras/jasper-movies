@@ -2,7 +2,7 @@
 import re
 from imdb import IMDb
 
-WORDS = ["movie", "movies", "yes"]
+WORDS = ["MOVIE", "MOVIES", "YES"]
 
 def format_names(people):
     del people[5:] # Max of 5 people listed
@@ -21,7 +21,7 @@ def isValid(text):
         Arguments:
         text -- user-input, typically transcribed speech
     """
-    return bool(re.search(r'\b(movie)\b', text, re.IGNORECASE))
+    return bool(re.search(r'\b(movie|movies)\b', text, re.IGNORECASE))
 
 def handle(text, mic, profile):
     mic.say('What movie?')

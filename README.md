@@ -7,7 +7,7 @@ Jasper Movies Plugin
 
 1. Install dependencies
 ```
-sudo pip install imdbpy
+sudo pip install "imdbpy>=5.0"
 ```
 2. Place the movies/ folder in your jasper_directory/plugins/speechhandler/ folder
 3. Restart Jasper

@@ -1,7 +1,7 @@
 # -*- coding: utf-8-*-
 import re
-from jasper import plugin
 from client import app_utils
+from jasper import plugin
 from imdb import IMDb
 
 def format_names(people):
@@ -26,14 +26,14 @@ class MoviesPlugin(plugin.SpeechHandlerPlugin):
 
     def handle(self, text, mic):
         mic.say('What movie?')
-        movie_name = mic.active_listen()
-        mic.say('Searching top five results for.  %s' %movie_name)
+        movie_name = mic.active_listen()[0]
+        mic.say('Searching top five results for:  %s' %movie_name)
         ia = IMDb()
         movie_query = ia.search_movie(movie_name)
         del movie_query[5:]
         for movie in movie_query:
             mic.say('Did you mean %s (%s)?' %(movie.get('title'), movie.get('year')))
-            response = mic.active_listen()
+            response = mic.active_listen()[0]
             if app_utils.is_positive(response):
                 ia.update(movie)
                 movie_info = '%s (%s).  ' %(movie.get('title'), movie.get('year'))

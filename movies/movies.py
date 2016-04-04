@@ -1,6 +1,6 @@
 # -*- coding: utf-8-*-
 import re
-from client import plugin
+from jasper import plugin
 from client import app_utils
 from imdb import IMDb
 
